@@ -1,9 +1,11 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
   <router-view/>
+  <van-tabbar route>
+    <van-tabbar-item replace to="/home" icon="home-o">首页</van-tabbar-item>
+    <van-tabbar-item replace to="/about" icon="friends-o">好友</van-tabbar-item>
+    <van-tabbar-item replace to="/like" icon="like-o">喜爱</van-tabbar-item>
+    <van-tabbar-item replace to="/manager" icon="manager-o">个人</van-tabbar-item>
+  </van-tabbar>
 </template>
 
 <style lang="scss">
