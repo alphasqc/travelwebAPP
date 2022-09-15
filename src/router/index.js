@@ -1,8 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AboutView from '../views/AboutView.vue'
-import LikeView from '../views/LikeView.vue'
-import ManagerView from '../views/ManagerView.vue'
+import WalletView from '../views/WalletView.vue'
+import GuideView from '../views/GuideView.vue'
+import UserView from '../views/UserView.vue'
 
 const routes = [
   {
@@ -15,19 +15,19 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    component: AboutView
+    path: '/wallet',
+    name: 'wallet',
+    component: WalletView
   },
   {
-    path: '/like',
-    name: 'like',
-    component: LikeView
+    path: '/guide',
+    name: 'guide',
+    component: GuideView
   },
   {
-    path: '/Manager',
-    name: 'Manager',
-    component: ManagerView
+    path: '/user',
+    name: 'user',
+    component: UserView
   }
 ]
 
