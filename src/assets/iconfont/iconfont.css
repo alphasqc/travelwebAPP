@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3658305 */
+  src: url('iconfont.woff2?t=1663665446551') format('woff2'),
+       url('iconfont.woff?t=1663665446551') format('woff'),
+       url('iconfont.ttf?t=1663665446551') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont-notification-f::before {
+  content: "\e68b";
+}
+
+.icon-zhinan:before {
+  content: "\eb70";
+}
+
+.icon-home-f:before {
+  content: "\e68d";
+}
+
+.icon-back:before {
+  content: "\e666";
+}
+
+.icon-close:before {
+  content: "\e668";
+}
+
+.icon-direction-l:before {
+  content: "\e66c";
+}
+
+.icon-favorite:before {
+  content: "\e66f";
+}
+
+.icon-fabulous:before {
+  content: "\e670";
+}
+
+.icon-good:before {
+  content: "\e673";
+}
+
+.icon-home:before {
+  content: "\e674";
+}
+
+.icon-link:before {
+  content: "\e676";
+}
+
+.icon-search:before {
+  content: "\e67d";
+}
+
+.icon-select:before {
+  content: "\e67e";
+}
+
+.icon-favorite-f:before {
+  content: "\e68a";
+}
+
+.icon-notification-f:before {
+  content: "\e68b";
+}
+
