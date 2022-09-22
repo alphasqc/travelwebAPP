@@ -15,7 +15,7 @@
       </template>
     </van-nav-bar>
     <van-swipe class="my-swipe" :autoplay="3000" lazy-render indicator-color="white">
-      <van-swipe-item v-model="getdata" v-for="item in 4" :key="item">
+      <van-swipe-item v-for="item in swiperlist" :key="item">
         <img :src="item.banner">
       </van-swipe-item>
     </van-swipe>
@@ -26,8 +26,10 @@
 import { ref, getCurrentInstance } from 'vue'
 import { useRouter } from 'vue-router'
 import '@/mock/index'
+import { getHome } from '@/axios/api'
 
 export default {
+  name: 'HomeView',
   setup () {
     // 左侧弹出
     const show = ref(false)
@@ -35,14 +37,11 @@ export default {
       show.value = true
     }
     // 轮播数据获取
-    const getdata = () => {
-      proxy.$axios.get('/imgurl').then((res) => {
-        console.log(res.data)
-        return res.data
-      }).catch((err) => {
-        console.log(err)
-      })
-    }
+    const swiperlist = ref('')
+    getHome('imgurl').then((res) => {
+      console.log(res.data)
+      swiperlist.value = res.data
+    })
     // 搜索跳转
     const router = useRouter()
     const { proxy } = getCurrentInstance()
@@ -56,7 +55,7 @@ export default {
     }
     return {
       show,
-      getdata,
+      swiperlist,
       jumpsearch,
       showPopup
     }
@@ -68,9 +67,15 @@ export default {
 .my-swipe .van-swipe-item {
   color: #fff;
   font-size: 20px;
-  line-height: 150px;
+  height: 15rem;
+  /* line-height: 15rem; */
   text-align: center;
   background-color: #39a9ed;
   margin-top: 20px;
+}
+
+.my-swipe img {
+  width: 100%;
+  height: 15rem;
 }
 </style>
