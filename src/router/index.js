@@ -1,12 +1,18 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import AreaView from '../views/AreaView.vue'
-import HomeView from '../views/HomeView.vue'
 import WalletView from '../views/WalletView.vue'
-import GuideView from '../views/GuideView.vue'
+import HomeView from '../views/HomeView.vue'
 import UserView from '../views/UserView.vue'
+
 import OptionsView from '../component/home/OptionsView.vue'
 import SwiperView from '../component/home/SwiperView.vue'
+import SearchView from '../component/home/SearchView.vue'
+import GuideView from '../component/home/GuideView.vue'
 import CardView from '../component/home/CardView.vue'
+import AreaView from '../component/home/AreaView.vue'
+import HotView from '../component/home/HotView.vue'
+
+import RegistView from '../component/user/RegistView.vue'
+import LoginView from '../component/user/LoginView.vue'
 
 const routes = [
   {
@@ -22,11 +28,6 @@ const routes = [
     path: '/wallet',
     name: 'wallet',
     component: WalletView
-  },
-  {
-    path: '/guide',
-    name: 'guide',
-    component: GuideView
   },
   {
     path: '/user',
@@ -52,6 +53,31 @@ const routes = [
     path: '/card',
     name: 'card',
     component: CardView
+  },
+  {
+    path: '/hot',
+    name: 'hot',
+    component: HotView
+  },
+  {
+    path: '/guide',
+    name: 'guide',
+    component: GuideView
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: SearchView
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginView
+  },
+  {
+    path: '/regist',
+    name: 'regist',
+    component: RegistView
   }
 ]
 

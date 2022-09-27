@@ -3,7 +3,6 @@
   <van-tabbar route>
     <van-tabbar-item replace to="/home" icon="home-o">首页</van-tabbar-item>
     <van-tabbar-item replace to="/wallet" icon="bag-o">购买</van-tabbar-item>
-    <van-tabbar-item replace to="/guide" icon="location-o">指南</van-tabbar-item>
     <van-tabbar-item replace to="/user" icon="user-o">个人</van-tabbar-item>
   </van-tabbar>
 </template>

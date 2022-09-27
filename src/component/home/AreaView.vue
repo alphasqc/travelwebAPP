@@ -13,7 +13,7 @@
         <van-index-bar :sticky="false">
             <van-index-anchor v-for="(item,index) in citylist" :key="index" :index="index">
                 <div>{{index}}</div>
-                <van-cell :title="value.name" v-for="value in item" :key="value.id" />
+                <van-cell :title="value.name" v-for="value in item" :key="value.id" @click="choosecity(value.name)" />
             </van-index-anchor>
         </van-index-bar>
     </div>
@@ -31,21 +31,31 @@
 <script>
 import { getHome } from '@/axios/api'
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 export default {
   name: 'AreaView',
   setup () {
+    const router = useRouter()
     // 返回上一页
     const onClickLeft = () => history.back()
     // 获取城市数据
     const citylist = ref('')
     getHome('citylist').then((res) => {
-      console.log(res.data)
       citylist.value = res.data
     })
-
+    // 城市选择
+    // const name = ref('')
+    const choosecity = (n) => {
+    //   name.value = n
+    //   this.$router.push({ name: 'home', params: { cityname: n } })
+      sessionStorage.setItem('key', n)
+      router.push('/home')
+    }
     return {
+    //   name,
       citylist,
+      choosecity,
       onClickLeft
     }
   }

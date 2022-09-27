@@ -18,7 +18,6 @@ export default {
     // 轮播数据获取
     const swiperlist = ref('')
     getHome('imgurl').then((res) => {
-      console.log(res.data)
       swiperlist.value = res.data
     })
     return {
