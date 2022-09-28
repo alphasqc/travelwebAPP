@@ -25,6 +25,9 @@
 </template>
 
 <script>
+import { onMounted } from '@vue/runtime-core'
+// import { ref } from 'vue'
+// import { onMounted } from '@vue/runtime-core'
 import { useRouter } from 'vue-router'
 // import '@/mock/index'
 import OptionsView from '../component/home/OptionsView.vue'
@@ -36,12 +39,8 @@ export default {
   },
   setup () {
     // 接受城市参数
-    const cityname = '城市'
-    const getcity = () => {
-      cityname.value = sessionStorage.getItem('key')
-      console.log(cityname.value)
-    }
-    // cityname.value = Json.parse(this.$route.params.cityname)
+    const cityname = sessionStorage.getItem('key')
+    // cityname.value = JSON.parse(this.$route.params.cityname)
     // 左侧弹出
     // const show = ref(false)
     // const showPopup = () => {
@@ -60,8 +59,9 @@ export default {
     const jumplogin = () => {
       router.push('/login')
     }
+    onMounted(() => {
+    })
     return {
-      getcity,
       cityname,
       // show,
       jumplogin,

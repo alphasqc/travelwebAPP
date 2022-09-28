@@ -1,11 +1,12 @@
 <template>
     <div class="login">
+        <van-nav-bar left-text="返回" left-arrow @click-left="onClickLeft" :fixed="true" />
         <p>Login</p>
         <van-cell-group inset>
             <!-- 输入任意文本 -->
-            <van-field v-model="text" label="用户名" placeholder="请输入用户名" />
+            <van-field v-model="logininfo.name" label="用户名" placeholder="请输入用户名" />
             <!-- 输入密码 -->
-            <van-field v-model="password" type="password" label="密码"  placeholder="请输入密码" />
+            <van-field v-model="logininfo.password" type="password" label="密码"  placeholder="请输入密码" />
         </van-cell-group>
         <van-row justify="center">
             <van-col span="18">
@@ -23,20 +24,37 @@
 <script>
 import router from '@/router'
 import { ref } from 'vue'
+import { Dialog } from 'vant'
 
 export default {
   setup () {
-    const text = ref('')
-    const password = ref('')
+    const logininfo = ref({
+      name: '',
+      password: ''
+    })
+    const userinfo = JSON.parse(localStorage.getItem('userInfo'))
+    // 返回上一页
+    const onClickLeft = () => history.back()
+    // 登录
     const userlogin = () => {
-
+      if (logininfo.value.name === userinfo.name && logininfo.value.password === userinfo.password) {
+        router.push('/home')
+      } else {
+        Dialog.alert({
+          message: '用户名或密码错误'
+        }).then(() => {
+          // on close
+        })
+      }
     }
+    // 注册
     const jumpregist = () => {
       router.push('/regist')
     }
     return {
-      text,
-      password,
+      logininfo,
+      userinfo,
+      onClickLeft,
       userlogin,
       jumpregist
     }
@@ -51,6 +69,7 @@ export default {
         font-family: "微软雅黑";
         background: linear-gradient(to right, rgb(0, 204, 255), rgb(0, 255, 162));
         -webkit-background-clip: text;
+        background-clip: text;
         color: transparent;
          /* 转变为行内块元素 文字渐变才会生效 */
         display: inline-block;

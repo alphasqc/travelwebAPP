@@ -10,6 +10,11 @@ export function getHome (url) {
   return axios.get(`${baseURL}${url}`)
 }
 
+export function setData (url) {
+  return axios.set(`${baseURL}${url}`)
+}
+
 export default {
-  getHome
+  getHome,
+  setData
 }

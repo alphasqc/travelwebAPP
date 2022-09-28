@@ -37,23 +37,24 @@ export default {
     padding: 0.5rem;
     border-bottom: rgb(215, 215, 215) solid 0.1px;
 }
-.van-col{
+.hot .van-col{
     text-align: left;
+    height: 100%;
 }
-.van-col img{
+.hot .van-col img{
     width: 100%;
     height: 100%;
     border-radius: 0.5rem;
 }
-.van-col div{
+.hot .van-col div{
     width: 100%;
 }
-.hotname{
+.hot .hotname{
     font-family: "微软雅黑";
     font-weight: 800;
     font-size: 1rem;
 }
-.hottitle{
+.hot .hottitle{
     height: 2rem;
     overflow: hidden;
     text-overflow: ellipsis;

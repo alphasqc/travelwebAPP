@@ -5,7 +5,7 @@ import UserView from '../views/UserView.vue'
 
 import OptionsView from '../component/home/OptionsView.vue'
 import SwiperView from '../component/home/SwiperView.vue'
-import SearchView from '../component/home/SearchView.vue'
+import SearchView from '../views/SearchView.vue'
 import GuideView from '../component/home/GuideView.vue'
 import CardView from '../component/home/CardView.vue'
 import AreaView from '../component/home/AreaView.vue'

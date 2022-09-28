@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 // 1. 引入你需要的组件
-import { Field, CellGroup, Image as VanImage, Tab, Tabs, Swipe, SwipeItem, Search, Popup, Tabbar, TabbarItem, Button, NavBar, Icon, Cell, IndexBar, IndexAnchor, Col, Row, PullRefresh } from 'vant'
+import { Dialog, Field, CellGroup, Image as VanImage, Tab, Tabs, Swipe, SwipeItem, Search, Popup, Tabbar, TabbarItem, Button, NavBar, Icon, Cell, IndexBar, IndexAnchor, Col, Row, PullRefresh } from 'vant'
 // 2. 引入组件样式
 import 'vant/lib/index.css'
 import '@/assets/iconfont/iconfont.css'
@@ -38,5 +38,6 @@ app.use(Tabs)
 app.use(VanImage)
 app.use(Field)
 app.use(CellGroup)
+app.use(Dialog)
 
 app.mount('#app')
