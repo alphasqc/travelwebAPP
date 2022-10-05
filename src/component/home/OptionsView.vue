@@ -1,6 +1,6 @@
 <template>
   <div class="options">
-    <van-tabs swipeable sticky>
+    <van-tabs swipeable sticky color="#1989fa" offset-top="2.5rem">
       <van-tab title="推荐">
         <van-pull-refresh v-model="loading" @refresh="onRefresh">
           <SwiperView></SwiperView>
@@ -15,7 +15,7 @@
       <van-tab title="定位">
         <GuideView></GuideView>
       </van-tab>
-      <van-tab title="计划"  disabled>内容 4</van-tab>
+      <van-tab title="计划">内容 4</van-tab>
     </van-tabs>
   </div>
 </template>

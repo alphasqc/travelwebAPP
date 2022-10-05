@@ -1,7 +1,7 @@
 <template>
     <div class="card">
       <div class="cardbox">
-        <div class="cardblock" v-for="(item,index) in cardlist" :key="index<10">
+        <div class="cardblock" v-for="(item,index) in cardlist" :key="index<10" @click="detailsjump">
           <img :src="item.img.url[4]" />
           <div class="cardinfo">
             <div class="cardname">{{item.name}}</div>
@@ -15,6 +15,7 @@
 <script>
 import { ref } from 'vue'
 import { getHome } from '@/axios/api'
+import router from '@/router'
 
 export default {
   name: 'CardView',
@@ -24,8 +25,13 @@ export default {
     getHome('hotlist').then((res) => {
       cardlist.value = res.data
     })
+    // 商品详情跳转
+    const detailsjump = () => {
+      router.push('/main')
+    }
     return {
-      cardlist
+      cardlist,
+      detailsjump
     }
   }
 }
@@ -62,6 +68,8 @@ export default {
   border-radius: 0 0 0.5rem 0.5rem;
   position:absolute;
   bottom: 0px;
+  display: flex;
+  flex-direction: column;
 }
 
 .cardname{
@@ -73,6 +81,8 @@ export default {
     color: white;
     text-align: left;
     margin-bottom: 1rem;
+    width: 90%;
+    align-self: center;
 }
 
 .cardtitle{
@@ -84,5 +94,7 @@ export default {
     -webkit-box-orient: vertical;
     font-size: 5px;
     color: rgb(215, 215, 215);
+    width: 90%;
+    align-self: center;
 }
 </style>

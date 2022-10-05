@@ -1,7 +1,7 @@
 <template>
     <div class="login">
         <van-nav-bar left-text="返回" left-arrow @click-left="onClickLeft" :fixed="true" />
-        <p>Login</p>
+        <p>请登录</p>
         <van-cell-group inset>
             <!-- 输入任意文本 -->
             <van-field v-model="logininfo.name" label="用户名" placeholder="请输入用户名" />
@@ -64,7 +64,7 @@ export default {
 
 <style>
     .login p{
-        font-size: 50px;
+        font-size: 40px;
         font-weight: 800;
         font-family: "微软雅黑";
         background: linear-gradient(to right, rgb(0, 204, 255), rgb(0, 255, 162));
@@ -88,5 +88,9 @@ export default {
         font-size: 14px;
         color: rgb(0, 179, 255);
         text-decoration: rgb(0, 179, 255) underline;
+    }
+
+    .login .van-field{
+      border-bottom: rgb(215, 215, 215) solid 1px;
     }
 </style>

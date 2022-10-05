@@ -43,4 +43,7 @@ export default {
   width: 100%;
   height: 15rem;
 }
+.swiper{
+  margin-top: 2.5rem;
+}
 </style>

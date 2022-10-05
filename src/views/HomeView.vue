@@ -1,7 +1,6 @@
 <template>
-<div class="home">
-
-    <van-nav-bar>
+  <div class="home">
+    <van-nav-bar :fixed="true">
       <template #left>
         <!-- <van-cell is-link @click="showPopup"> -->
           <van-icon name="user-o" size="18" @click="jumplogin" />
@@ -74,5 +73,7 @@ export default {
 </script>
 
 <style>
-
+.home{
+  padding-bottom: 15%;
+}
 </style>
