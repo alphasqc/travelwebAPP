@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import ShopcartView from '../views/ShopcartView.vue'
+import OrderView from '../views/OrderView.vue'
 import WalletView from '../views/WalletView.vue'
 import HomeView from '../views/HomeView.vue'
 import UserView from '../views/UserView.vue'
@@ -20,6 +20,8 @@ import TitleView from '../component/details/TitleView.vue'
 import BookView from '../component/details/BookView.vue'
 import WriteView from '../component/details/WriteView.vue'
 import RecomView from '../component/details/RecomView.vue'
+
+import AddorderView from '../component/order/AddorderView.vue'
 
 const routes = [
   {
@@ -58,7 +60,7 @@ const routes = [
     name: 'area',
     component: AreaView,
     meta: {
-      showTabbar: true
+      showTabbar: false
     }
   },
   {
@@ -134,9 +136,9 @@ const routes = [
     }
   },
   {
-    path: '/shopcart',
-    name: 'shopcart',
-    component: ShopcartView,
+    path: '/order',
+    name: 'order',
+    component: OrderView,
     meta: {
       showTabbar: true
     }
@@ -169,6 +171,14 @@ const routes = [
     path: '/recom',
     name: 'recom',
     component: RecomView,
+    meta: {
+      showTabbar: false
+    }
+  },
+  {
+    path: '/addorder',
+    name: 'addorder',
+    component: AddorderView,
     meta: {
       showTabbar: false
     }

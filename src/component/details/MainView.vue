@@ -38,9 +38,9 @@
 
         <!-- 底部功能 -->
         <van-action-bar sticky>
-            <van-action-bar-icon icon="chat-o" text="客服" color="#ee0a24" />
-            <van-action-bar-icon icon="edit" text="点评" color="#ff5000" />
-            <van-action-bar-icon id="collection" icon="star-o" text="收藏" color="#ff5000" @click="changecollection" />
+            <van-action-bar-icon icon="chat-o" text="客服" color="#1989fa" />
+            <van-action-bar-icon icon="edit" text="点评" color="#1989fa" />
+            <van-action-bar-icon id="collection" icon="star-o" text="收藏" color="#1989fa" @click="changecollection" />
             <van-action-bar-button type="primary" text="查看门票" />
         </van-action-bar>
     </div>

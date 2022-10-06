@@ -26,7 +26,6 @@
 <script>
 import { onMounted } from '@vue/runtime-core'
 // import { ref } from 'vue'
-// import { onMounted } from '@vue/runtime-core'
 import { useRouter } from 'vue-router'
 // import '@/mock/index'
 import OptionsView from '../component/home/OptionsView.vue'

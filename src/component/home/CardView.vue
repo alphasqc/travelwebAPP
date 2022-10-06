@@ -50,7 +50,7 @@ export default {
 
 .cardblock{
   width: 45%;
-  height: 14rem;
+  height: 12rem;
   margin: 0.5rem;
   position: relative;
 }

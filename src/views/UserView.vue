@@ -88,7 +88,7 @@ export default {
 
 <style>
     .usertop{
-        height: 15rem;
+        height: 10rem;
     }
 
     .userhead{

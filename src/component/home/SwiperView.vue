@@ -32,7 +32,7 @@ export default {
 .my-swipe .van-swipe-item {
   color: #fff;
   font-size: 20px;
-  height: 15rem;
+  height: 12rem;
   /* line-height: 15rem; */
   text-align: center;
   background-color: #39a9ed;
@@ -41,7 +41,7 @@ export default {
 
 .my-swipe img {
   width: 100%;
-  height: 15rem;
+  height: 12rem;
 }
 .swiper{
   margin-top: 2.5rem;

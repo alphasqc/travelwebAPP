@@ -31,8 +31,11 @@ export default {
 </script>
 
 <style>
+.hot {
+    margin-top: 2.5rem;
+}
 .hot .van-row{
-    height: 7rem;
+    height: 5rem;
     box-sizing: border-box;
     padding: 0.5rem;
     border-bottom: rgb(215, 215, 215) solid 0.1px;
