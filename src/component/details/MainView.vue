@@ -3,7 +3,7 @@
       <!-- 功能菜单 -->
       <van-popup class="optionjump" v-model:show="show" round position="top" :style="{ height: '30%' }" closeable close-icon="close">
         <div @click="jumphome"><van-icon name="home-o" size="20" />首页</div>
-        <div @click="jumpcart"><van-icon name="cart-o" size="20" />购物车</div>
+        <div @click="jumpcart"><van-icon name="idcard" size="20" />订单</div>
         <div @click="jumpuser"><van-icon name="user-o" size="20" />个人</div>
         <div @click="jumpsearch"><van-icon name="search" size="20" />搜索</div>
       </van-popup>
@@ -11,7 +11,7 @@
         <van-nav-bar left-arrow @click-left="onClickLeft" :fixed="true">
             <template #right>
                 <van-icon name="share-o" @click="showShare = true" size="1.5em" />
-                <van-share-sheet v-model:show="showShare" title="立即分享给好友" :options="options" />
+                <van-share-sheet :overlay-style="{background: 'rgba(0, 0, 0, 0)'}" v-model:show="showShare" title="立即分享给好友" :options="options" />
                 <van-icon name="apps-o" @click="showPopup" size="1.5rem" />
             </template>
         </van-nav-bar>
@@ -38,10 +38,11 @@
 
         <!-- 底部功能 -->
         <van-action-bar sticky>
-            <van-action-bar-icon icon="chat-o" text="客服" color="#1989fa" />
-            <van-action-bar-icon icon="edit" text="点评" color="#1989fa" />
-            <van-action-bar-icon id="collection" icon="star-o" text="收藏" color="#1989fa" @click="changecollection" />
-            <van-action-bar-button type="primary" text="查看门票" />
+            <!-- <van-action-bar-icon icon="chat-o" text="客服" color="#1989fa" /> -->
+            <van-action-bar-icon icon="edit" to="/allwrite" text="点评" color="#1989fa" />
+            <van-action-bar-icon id="collection" v-if="!islove" icon="star-o" text="收藏" color="#1989fa" @click="changecollection" />
+            <van-action-bar-icon id="collection" v-if="islove" icon="star" text="已收藏" color="#1989fa" @click="changecollection" />
+            <van-action-bar-button type="primary" text="查看价格" @click="jumpShop"/>
         </van-action-bar>
     </div>
 </template>
@@ -53,6 +54,7 @@ import TitleView from './TitleView.vue'
 import BookView from './BookView.vue'
 import WriteView from './WriteView.vue'
 import RecomView from './RecomView.vue'
+import { getMain } from '@/axios/api'
 
 export default {
   name: 'MainView',
@@ -63,10 +65,18 @@ export default {
     RecomView
   },
   setup () {
+    scrollTo(0, 0)
     // 返回上一页
     const onClickLeft = () => history.back()
     // 分享
     const showShare = ref(false)
+    // 接收列表
+    const mainlist = ref({})
+    const blog = JSON.parse(localStorage.getItem('main'))
+    getMain(blog.blog, blog.id).then((res) => {
+      mainlist.value = res.data
+    })
+
     const options = [
       [
         { name: '微信', icon: 'wechat' },
@@ -81,10 +91,10 @@ export default {
         { name: '小程序码', icon: 'weapp-qrcode' }
       ]
     ]
+    const islove = ref(false)
     // 收藏
     const changecollection = () => {
-      document.getElementById('collection').text = '已收藏'
-      console.log(document.getElementById('collection').text)
+      islove.value = !islove.value
     }
     // 菜单弹出
     const show = ref(false)
@@ -96,7 +106,7 @@ export default {
       router.push('/home')
     }
     const jumpcart = () => {
-      router.push('/shopcart')
+      router.push('/order')
     }
     const jumpsearch = () => {
       router.push('/search')
@@ -107,12 +117,20 @@ export default {
     // banner
     const topbanner = 'https://img1.baidu.com/it/u=2514092501,2929400689&fm=253&fmt=auto&app=138&f=JPEG?w=1600&h=500'
     const botbanner = 'https://img.zcool.cn/community/0153c858e4ba69a801219c77cb0a25.jpg@1280w_1l_2o_100sh.jpg'
+    // 查看门票按钮
+    const jumpShop = () => {
+      scrollTo(0, 480)
+    }
     return {
+      mainlist,
+      blog,
       show,
+      islove,
       options,
       showShare,
       topbanner,
       botbanner,
+      jumpShop,
       jumphome,
       jumpcart,
       jumpsearch,

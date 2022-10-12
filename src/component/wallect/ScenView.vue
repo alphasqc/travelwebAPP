@@ -1,11 +1,12 @@
 <template>
-    <div class="card">
+    <div class="scen">
       <div class="cardbox">
-        <div class="cardblock" v-for="(item,index) in cardlist" :key="index<10" @click="detailsjump(item.id,item.blog)">
+        <div class="cardblock" v-for="(item,index) in cardlist" :key="index<10" @click="detailsjump(item.id, item.blog)">
           <img :src="item.img[4]" />
           <div class="cardinfo">
             <div class="cardname">{{item.name}}</div>
             <div class="cardtitle">{{item.title}}</div>
+            <div class="cardprice">￥30.00/人起</div>
           </div>
         </div>
       </div>
@@ -43,32 +44,29 @@ export default {
 </script>
 
 <style>
-.card{
-  margin-top: 1rem;
-}
 
-.cardbox{
+.scen .cardbox{
   width: 100%;
   display: flex;
   flex-wrap:wrap;
 }
 
-.cardblock{
+.scen .cardblock{
   width: 45%;
   height: 12rem;
   margin: 0.5rem;
   position: relative;
 }
 
-.cardblock img{
+.scen .cardblock img{
   width: 100%;
   height: 100%;
   border-radius: 0.5rem;
 }
 
-.cardinfo{
+.scen .cardinfo{
   width: 100%;
-  height: 40%;
+  height: 60%;
   background-color: rgba(67, 67, 67, 0.5);
   border-radius: 0 0 0.5rem 0.5rem;
   position:absolute;
@@ -77,7 +75,7 @@ export default {
   flex-direction: column;
 }
 
-.cardname{
+.scen .cardname{
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -90,7 +88,7 @@ export default {
     align-self: center;
 }
 
-.cardtitle{
+.scen .cardtitle{
     height: 2rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -101,5 +99,12 @@ export default {
     color: rgb(215, 215, 215);
     width: 90%;
     align-self: center;
+}
+
+.scen .cardprice{
+    color: yellow;
+    text-align: right;
+    font-size: 5px;
+    margin: 1rem 0.5rem 0 0;
 }
 </style>

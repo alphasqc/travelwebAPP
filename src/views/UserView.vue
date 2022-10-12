@@ -1,20 +1,26 @@
 <template>
     <div class="user">
         <div class="usertop">
-            <van-nav-bar border>
+            <!-- <van-nav-bar border>
                 <template #left>
                     <van-icon name="bars" size="24" />
                 </template>
                 <template #right>
                     <van-icon name="setting-o" size="24" />
                 </template>
-            </van-nav-bar>
+            </van-nav-bar> -->
 
             <img :src="imglist" alt="">
         </div>
 
-        <div class="userhead">
-            <img :src="userimg" alt="">
+        <div class="userhead" v-if="userlist.islogin">
+            <img :src="userlist.userimg" alt="">
+            {{userlist.name}}
+        </div>
+
+        <div class="userhead" v-if="!userlist.islogin" @click="jumpLogin">
+            <img src="https://pic4.zhimg.com/50/v2-6afa72220d29f045c15217aa6b275808_hd.jpg?source=1940ef5c" alt="">
+            请登录
         </div>
 
         <van-row justify="center" @click="infoJump">
@@ -42,7 +48,7 @@
             </van-col>
         </van-row>
         <van-row justify="center" @click="exitUser">
-            <van-col span="20" style="color:red">
+            <van-col span="20">
                 <van-icon name="revoke" color="#ee0a24" />
                 退出登录
             </van-col>
@@ -55,32 +61,38 @@ import router from '@/router'
 
 export default {
   setup () {
+    const userlist = JSON.parse(localStorage.getItem('userInfo'))
     const imglist = 'https://www.yulumi.cn/gl/uploads/allimg/201128/1622554M7-0.jpg'
-    const userimg = 'https://img2.woyaogexing.com/2020/06/19/02d268db09ff4e8e9608fd64adbbeed8!400x400.jpeg'
     // 内容功能
     const infoJump = () => {
-      router.push('/info')
+      router.push('/infoview')
     }
     const shoplistJump = () => {
-      router.push('/shoplist')
+      router.push('/order')
     }
     const loveJump = () => {
-      router.push('/love')
+      router.push('/loveview')
     }
     const histroyJump = () => {
       router.push('/histroy')
     }
     const exitUser = () => {
-
+      userlist.islogin = false
+      localStorage.setItem('userInfo', JSON.stringify(userlist))
+      router.push('/home')
+    }
+    const jumpLogin = () => {
+      router.push('/login')
     }
     return {
+      userlist,
       imglist,
-      userimg,
       infoJump,
       shoplistJump,
       loveJump,
       histroyJump,
-      exitUser
+      exitUser,
+      jumpLogin
     }
   }
 }
@@ -99,7 +111,7 @@ export default {
         background-color: black;
         margin: 0 auto;
         position: relative;
-        top: -1rem;
+        top: -3rem;
     }
 
     .userhead img{

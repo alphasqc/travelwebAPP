@@ -1,107 +1,37 @@
 {
-  "id": "3658305",
-  "name": "travel",
+  "id": "3698102",
+  "name": "travelapp",
   "font_family": "iconfont",
   "css_prefix_text": "icon-",
   "description": "",
   "glyphs": [
     {
-      "icon_id": "5387848",
-      "name": "指南针_o",
-      "font_class": "zhinan",
-      "unicode": "eb70",
-      "unicode_decimal": 60272
+      "icon_id": "3903884",
+      "name": "景点",
+      "font_class": "jingdian",
+      "unicode": "e602",
+      "unicode_decimal": 58882
     },
     {
-      "icon_id": "15838619",
-      "name": "home-filling",
-      "font_class": "home-f",
-      "unicode": "e68d",
-      "unicode_decimal": 59021
+      "icon_id": "5359613",
+      "name": "酒店",
+      "font_class": "jiudian",
+      "unicode": "e629",
+      "unicode_decimal": 58921
     },
     {
-      "icon_id": "15838434",
-      "name": "back",
-      "font_class": "back",
-      "unicode": "e666",
-      "unicode_decimal": 58982
+      "icon_id": "5359618",
+      "name": "美食",
+      "font_class": "meishi",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
     },
     {
-      "icon_id": "15838444",
-      "name": "close",
-      "font_class": "close",
-      "unicode": "e668",
-      "unicode_decimal": 58984
-    },
-    {
-      "icon_id": "15838463",
-      "name": "direction-left",
-      "font_class": "direction-l",
-      "unicode": "e66c",
-      "unicode_decimal": 58988
-    },
-    {
-      "icon_id": "15838474",
-      "name": "favorite",
-      "font_class": "favorite",
-      "unicode": "e66f",
-      "unicode_decimal": 58991
-    },
-    {
-      "icon_id": "15838479",
-      "name": "fabulous",
-      "font_class": "fabulous",
-      "unicode": "e670",
-      "unicode_decimal": 58992
-    },
-    {
-      "icon_id": "15838483",
-      "name": "good",
-      "font_class": "good",
-      "unicode": "e673",
-      "unicode_decimal": 58995
-    },
-    {
-      "icon_id": "15838485",
-      "name": "home",
-      "font_class": "home",
-      "unicode": "e674",
-      "unicode_decimal": 58996
-    },
-    {
-      "icon_id": "15838493",
-      "name": "link",
-      "font_class": "link",
-      "unicode": "e676",
-      "unicode_decimal": 58998
-    },
-    {
-      "icon_id": "15838525",
-      "name": "search",
-      "font_class": "search",
-      "unicode": "e67d",
-      "unicode_decimal": 59005
-    },
-    {
-      "icon_id": "15838530",
-      "name": "select",
-      "font_class": "select",
-      "unicode": "e67e",
-      "unicode_decimal": 59006
-    },
-    {
-      "icon_id": "15838593",
-      "name": "favorite-filling",
-      "font_class": "favorite-f",
-      "unicode": "e68a",
-      "unicode_decimal": 59018
-    },
-    {
-      "icon_id": "15838605",
-      "name": "notification-filling",
-      "font_class": "notification-f",
-      "unicode": "e68b",
-      "unicode_decimal": 59019
+      "icon_id": "23943207",
+      "name": "周边游",
+      "font_class": "zhoubianyou",
+      "unicode": "f9a4",
+      "unicode_decimal": 63908
     }
   ]
 }

@@ -17,7 +17,7 @@ export default {
   setup () {
     // 轮播数据获取
     const swiperlist = ref('')
-    getHome('imgurl').then((res) => {
+    getHome('swiperimg').then((res) => {
       swiperlist.value = res.data
     })
     return {

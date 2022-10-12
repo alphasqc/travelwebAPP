@@ -6,7 +6,7 @@
     <van-tabbar-item replace to="/order" icon="idcard">订单</van-tabbar-item>
     <van-tabbar-item replace to="/user" icon="user-o">个人</van-tabbar-item>
   </van-tabbar>
-</template>
+</template>66
 
 <style lang="scss">
 #app {
@@ -29,6 +29,7 @@ nav {
     }
   }
 }
+
 </style>
 
 <script>

@@ -38,6 +38,8 @@ export default {
     // 登录
     const userlogin = () => {
       if (logininfo.value.name === userinfo.name && logininfo.value.password === userinfo.password) {
+        userinfo.islogin = true
+        localStorage.setItem('userInfo', JSON.stringify(userinfo))
         router.push('/home')
       } else {
         Dialog.alert({

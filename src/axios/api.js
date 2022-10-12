@@ -10,11 +10,21 @@ export function getHome (url) {
   return axios.get(`${baseURL}${url}`)
 }
 
-export function setData (url) {
-  return axios.set(`${baseURL}${url}`)
+export function foundData (url, foundtext) {
+  return axios.get(`${baseURL}${url}?name_like=${foundtext}`)
+}
+
+export function getOrder (url, ordertype) {
+  return axios.get(`${baseURL}${url}?type_like=${ordertype}`)
+}
+
+export function getMain (url, id) {
+  return axios.get(`${baseURL}${url}/${id}`)
 }
 
 export default {
   getHome,
-  setData
+  foundData,
+  getMain,
+  getOrder
 }

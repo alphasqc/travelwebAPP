@@ -1,6 +1,7 @@
 <template>
   <div class="options">
-    <van-tabs swipeable sticky color="#1989fa" offset-top="2.5rem">
+    <van-tabs sticky color="#1989fa" offset-top="2.5rem">
+      <!-- 标签卡滑动属性swipeable -->
       <van-tab title="推荐">
         <van-pull-refresh v-model="loading" @refresh="onRefresh">
           <SwiperView></SwiperView>
@@ -15,7 +16,9 @@
       <van-tab title="定位">
         <GuideView></GuideView>
       </van-tab>
-      <van-tab title="计划">内容 4</van-tab>
+      <van-tab title="计划">
+        <PlanView></PlanView>
+      </van-tab>
     </van-tabs>
   </div>
 </template>
@@ -31,6 +34,7 @@ import GuideView from './GuideView.vue'
 
 import { Toast } from 'vant'
 import { ref } from 'vue'
+import PlanView from './PlanView.vue'
 
 export default {
   name: 'OptionsView',
@@ -38,7 +42,8 @@ export default {
     SwiperView,
     CardView,
     HotView,
-    GuideView
+    GuideView,
+    PlanView
   },
   setup () {
     // 下拉刷新

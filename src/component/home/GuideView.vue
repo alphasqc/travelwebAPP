@@ -1,5 +1,5 @@
 <template>
-    <div class="guide">
+    <div class="guide" style="height: 29rem">
         <div id="container" style="height: 100%;width: 100%;"></div>
     </div>
 </template>
