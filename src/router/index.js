@@ -25,6 +25,7 @@ import BookView from '../component/details/BookView.vue'
 import WriteView from '../component/details/WriteView.vue'
 import RecomView from '../component/details/RecomView.vue'
 import AllwriteView from '../component/details/AllwriteView.vue'
+import AddwriteView from '../component/details/AddwriteView.vue'
 
 import AddorderView from '../component/order/AddorderView.vue'
 import AllorderView from '../component/order/AllorderView.vue'
@@ -315,6 +316,14 @@ const routes = [
     path: '/scen',
     name: 'scen',
     component: ScenView,
+    meta: {
+      showTabbar: true
+    }
+  },
+  {
+    path: '/addwrite',
+    name: 'addwrite',
+    component: AddwriteView,
     meta: {
       showTabbar: true
     }

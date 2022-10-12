@@ -18,6 +18,10 @@ export function getOrder (url, ordertype) {
   return axios.get(`${baseURL}${url}?type_like=${ordertype}`)
 }
 
+export function foundWrite (url, foundid) {
+  return axios.get(`${baseURL}${url}?blogid_like=${foundid}`)
+}
+
 export function getMain (url, id) {
   return axios.get(`${baseURL}${url}/${id}`)
 }
