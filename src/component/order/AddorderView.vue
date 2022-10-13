@@ -57,7 +57,9 @@ export default {
   name: 'AddrderView',
   setup () {
     // 返回
-    const onClickLeft = () => history.back()
+    const onClickLeft = () => {
+      router.push('/main')
+    }
     // 提交按钮事件
     const onSubmit = (mainlist, tickets, num) => {
     //   Toast('点击按钮')

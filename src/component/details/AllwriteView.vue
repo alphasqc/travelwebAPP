@@ -47,7 +47,9 @@ import router from '@/router'
 
 export default {
   setup () {
-    const onClickLeft = () => history.back()
+    const onClickLeft = () => {
+      router.push('/main')
+    }
     // 接收列表
     const writelist = ref({})
     const blog = JSON.parse(localStorage.getItem('main'))

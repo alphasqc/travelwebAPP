@@ -33,10 +33,6 @@
               label="手机号"
               type="tel"
               name="pattern"
-              :rules="[
-                { required: true, message: '请填写您的手机号码！' },
-                { pattern: /^1[3456789]\d{9}$/, message: '手机号码格式错误！'}
-              ]"
               placeholder="请输入手机号码"
             />
             <!-- 输入邮箱，调起手机号键盘 -->
@@ -45,10 +41,6 @@
               type="text"
               label="邮箱"
               name="pattern"
-              :rules="[
-                { required: true, message: '请填写您的邮箱地址！' },
-                { pattern:  /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/, message: '邮箱地址格式错误！'}
-              ]"
               placeholder="请输入邮箱"
             />
             <!-- 短信验证码 -->

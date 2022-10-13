@@ -67,7 +67,9 @@ export default {
   setup () {
     scrollTo(0, 0)
     // 返回上一页
-    const onClickLeft = () => history.back()
+    const onClickLeft = () => {
+      router.push('/home')
+    }
     // 分享
     const showShare = ref(false)
     // 接收列表
