@@ -7,7 +7,7 @@
         </van-row> -->
         <van-row justify="center">
             <van-col span="20">
-                <van-search shape="round" placeholder="请输入需要搜索的城市名称" input-align="center" class="searchcity" />
+                <van-search shape="round" placeholder="请输入需要搜索的城市名称" input-align="center" class="searchcity" @click="testPos"/>
             </van-col>
         </van-row>
         <van-index-bar :sticky="false">
@@ -30,8 +30,9 @@
 
 <script>
 import { getHome } from '@/axios/api'
-import { ref } from 'vue'
+import { getCurrentInstance, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import "@/mock/index"
 
 export default {
   name: 'AreaView',
@@ -41,9 +42,9 @@ export default {
     const onClickLeft = () => history.back()
     // 获取城市数据
     const citylist = ref('')
-    getHome('citylist').then((res) => {
-      citylist.value = res.data
-    })
+    // getHome('citylist').then((res) => {
+    //   citylist.value = res.data
+    // })
     // 城市选择
     // const name = ref('')
     const choosecity = (n) => {
@@ -52,10 +53,17 @@ export default {
       sessionStorage.setItem('key', n)
       router.push('/home')
     }
+    const { proxy } = getCurrentInstance()
+    const testPos = () => {
+      getHome('user').then((res) => {
+        console.log(res.data.data)
+      })
+    }
     return {
     //   name,
       citylist,
       choosecity,
+      testPos,
       onClickLeft
     }
   }

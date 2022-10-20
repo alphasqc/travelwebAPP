@@ -1,4 +1,8 @@
 import Mock from 'mockjs'
+Mock.mock("/api/info", {
+  name: "zs",
+  password: 123
+})
 Mock.mock('/api', {
   imgurl: [
     {

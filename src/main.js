@@ -10,6 +10,7 @@ import '@/assets/iconfont/iconfont.css'
 
 // import { http } from '@/axios/api'
 import '@/mock/index'
+import axios from 'axios'
 
 const app = createApp(App)
 
@@ -17,6 +18,7 @@ const app = createApp(App)
 
 app.use(store)
 app.use(router)
+app.config.globalProperties.$axios = axios
 
 app.use(Swipe)
 app.use(SwipeItem)
